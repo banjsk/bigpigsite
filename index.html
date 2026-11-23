@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#171512">
+<meta name="description" content="BIG PIG — мясной ресторан в центре Пензы. Стейки, гриль, бургеры, авторская кухня и доставка.">
+<title>BIG PIG — мясной ресторан | Пенза</title>
+<style>
+:root{--bg:#171512;--panel:#211e19;--cream:#f2eadb;--muted:#b7ad9d;--red:#bd3b2d;--gold:#c89b58;--line:#423a30}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--cream);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1160px,calc(100% - 44px));margin:auto}
+header{position:absolute;z-index:5;top:0;left:0;width:100%;border-bottom:1px solid #ffffff22}.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.logo{font-weight:950;letter-spacing:.09em;font-size:27px}.logo span{color:var(--red)}.navlinks{display:flex;gap:30px;color:#e0d7c9;font-size:13px;text-transform:uppercase;letter-spacing:.12em}.navlinks a:hover{color:var(--gold)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--red);color:white;padding:15px 22px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:12px;border:1px solid var(--red);transition:.2s}.nav-cta:hover,.btn:hover{background:#9e2f25;transform:translateY(-2px)}
+.hero{min-height:760px;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(15,13,11,.96) 0%,rgba(15,13,11,.78) 48%,rgba(15,13,11,.3) 100%),url('https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 75% 45%,#9b452522,transparent 45%),linear-gradient(0deg,var(--bg),transparent 25%);pointer-events:none}
+.hero-inner{position:relative;padding-top:100px;max-width:720px}.eyebrow{color:var(--gold);font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:bold}.hero h1{font-size:clamp(58px,10vw,116px);line-height:.86;letter-spacing:-.065em;margin:22px 0 25px;font-weight:950}.hero h1 span{color:var(--red)}.hero p{font-size:18px;line-height:1.65;color:#d0c6b7;max-width:510px;margin:0 0 32px}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn.outline{background:transparent;border-color:#8b7b66}.btn.outline:hover{background:#ffffff12}.hero-note{margin-top:55px;color:#a99d8b;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+section{padding:100px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:42px}.kicker{color:var(--red);font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:bold}.section-head h2{font-size:clamp(36px,6vw,64px);letter-spacing:-.05em;margin:12px 0 0}.section-head p{color:var(--muted);max-width:360px;line-height:1.6;margin:0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.about-art{min-height:490px;background:linear-gradient(0deg,#17151266,#17151222),url('https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1000&q=85') center/cover;position:relative}.about-art:after{content:"FIRE • MEAT • PASSION";position:absolute;bottom:24px;left:24px;font-size:12px;letter-spacing:.2em;color:white;font-weight:bold}.about-copy h2{font-size:clamp(36px,5vw,58px);line-height:.98;letter-spacing:-.05em;margin:14px 0 24px}.about-copy p{color:var(--muted);font-size:16px;line-height:1.8}.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:35px}.fact{border-top:1px solid var(--line);padding-top:15px}.fact b{display:block;color:var(--gold);font-size:23px}.fact small{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+.menu-section{background:#201d18}.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.menu-card{background:var(--panel);border:1px solid var(--line);min-height:280px;display:flex;flex-direction:column;justify-content:end;padding:28px;position:relative;overflow:hidden}.menu-card:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#100f0dcc,transparent 75%),var(--photo) center/cover;opacity:.65;transition:.4s}.menu-card:hover:before{transform:scale(1.06);opacity:.85}.menu-card>*{position:relative}.menu-card .num{color:var(--gold);font-size:11px;letter-spacing:.2em}.menu-card h3{font-size:28px;margin:10px 0 8px}.menu-card p{margin:0;color:#d0c6b7;font-size:13px;line-height:1.5}
+.feature{display:grid;grid-template-columns:1.1fr .9fr;min-height:470px;background:#a93629}.feature-copy{padding:70px;display:flex;flex-direction:column;justify-content:center}.feature-copy .kicker{color:#f0c99a}.feature-copy h2{font-size:clamp(40px,6vw,70px);line-height:.92;letter-spacing:-.06em;margin:16px 0}.feature-copy p{color:#f0d9ce;line-height:1.7;max-width:430px}.feature-photo{background:url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1100&q=85') center/cover;min-height:360px}
+.contact{background:#201d18}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}.contact h2{font-size:clamp(40px,6vw,66px);line-height:.95;letter-spacing:-.06em;margin:14px 0 35px}.contact-item{padding:20px 0;border-top:1px solid var(--line)}.contact-item small{display:block;color:var(--gold);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}.contact-item a,.contact-item strong{font-size:20px}.contact-item p{color:var(--muted);margin:7px 0 0;line-height:1.5}.map{min-height:430px;background:#29251f;display:flex;align-items:center;justify-content:center;text-align:center;padding:35px;border:1px solid var(--line);position:relative;overflow:hidden}.map:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#bd3b2d22,transparent 55%),repeating-linear-gradient(45deg,transparent,transparent 35px,#ffffff08 36px,#ffffff08 37px)}.map-content{position:relative}.map-pin{font-size:40px}.map h3{font-size:27px;margin:12px 0}.map p{color:var(--muted);line-height:1.6}.map a{margin-top:14px;display:inline-block;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:5px}
+footer{padding:30px 0;color:#887e70;font-size:11px;letter-spacing:.08em}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}
+@media(max-width:800px){.navlinks{display:none}.hero{min-height:680px}.about-grid,.feature,.contact-grid{grid-template-columns:1fr}.about-art{min-height:360px;order:2}.menu-grid{grid-template-columns:1fr 1fr}.feature-copy{padding:48px 30px}.feature-photo{min-height:300px}.section-head{display:block}.section-head p{margin-top:16px}.contact-grid{gap:30px}}
+@media(max-width:520px){.wrap{width:min(100% - 30px,1160px)}.nav{height:70px}.logo{font-size:23px}.nav-cta{padding:12px 13px;font-size:10px}.hero{min-height:650px}.hero p{font-size:16px}.hero-note{margin-top:38px}.actions .btn{width:100%}section{padding:72px 0}.menu-grid{grid-template-columns:1fr}.menu-card{min-height:245px}.facts{gap:8px}.fact b{font-size:19px}.fact small{font-size:9px}.footer-row{align-items:flex-start;flex-direction:column}}
+
+.real-menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.menu-category{background:var(--panel);border:1px solid var(--line);display:grid;grid-template-columns:38% 1fr;min-height:280px;overflow:hidden}
+.menu-photo{background-size:cover;background-position:center;min-height:100%;filter:saturate(.85)}
+.menu-category-body{padding:23px 22px}
+.menu-category h3{font-size:25px;margin:8px 0 17px;letter-spacing:-.03em}
+.dish{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid #ffffff13;font-size:13px;line-height:1.35}
+.dish span{color:#e8dfd2}.dish small{display:block;color:var(--muted);font-size:10px;margin-top:3px}.dish b{white-space:nowrap;color:var(--gold);font-size:12px}
+.menu-foot{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:25px;color:var(--muted);font-size:13px}
+.menu-foot a{color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:5px}
+@media(max-width:900px){.real-menu{grid-template-columns:1fr}.menu-category{min-height:250px}}
+@media(max-width:520px){.menu-category{grid-template-columns:1fr}.menu-photo{min-height:170px}.menu-category-body{padding:21px}.menu-foot{align-items:flex-start;flex-direction:column}}
+
+/* BIG PIG brand direction: monochrome, editorial serif, understated */
+:root{--bg:#050505;--panel:#111;--cream:#f4f0ec;--muted:#aaa39d;--red:#b9a39a;--gold:#c9b5a8;--line:#333}
+body{background:#050505;color:#f5f1ed;font-family:Georgia,'Times New Roman',serif}
+header{background:linear-gradient(180deg,#050505ef,#05050555);border-bottom:1px solid #ffffff18}
+.nav{height:100px}
+.logo{display:flex;flex-direction:column;align-items:center;gap:2px;color:#f6f0eb;letter-spacing:0;font-weight:400}
+.logo-the{font-size:11px;letter-spacing:.48em;text-transform:none;color:#d7c9c1}
+.logo-main{font-family:Georgia,'Times New Roman',serif;font-size:39px;line-height:.9;letter-spacing:.04em;font-weight:700}
+.logo-sub{font-size:11px;letter-spacing:.48em;text-transform:lowercase;color:#d7c9c1}
+.navlinks{font-family:Arial,sans-serif;color:#e2ddd8}
+.navlinks a:hover,.menu-foot a:hover{color:#fff}
+.nav-cta{background:transparent;border:1px solid #a99b92;color:#f4efeb;font-family:Arial,sans-serif}
+.nav-cta:hover{background:#ffffff14}
+.hero{min-height:790px;background:linear-gradient(90deg,rgba(0,0,0,.95),rgba(0,0,0,.76) 52%,rgba(0,0,0,.38)),url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero:before{background:linear-gradient(0deg,#050505,transparent 35%);opacity:.9}
+.eyebrow,.kicker,.menu-category .num,.menu-card .num{color:#c7b5aa}
+.hero h1{font-family:Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:.035em;font-size:clamp(76px,13vw,150px);line-height:.82;color:#f7f1ed;text-shadow:0 5px 35px #000}
+.hero h1 span{color:#d0bdb2}
+.hero p{font-family:Arial,sans-serif;color:#d0c9c4}
+.hero-phones{display:flex;gap:34px;flex-wrap:wrap;margin-top:30px}
+.hero-phones a{display:flex;flex-direction:column;gap:7px;border-left:1px solid #b7a49a;padding-left:16px}
+.hero-phones span{font-family:Arial,sans-serif;color:#bcb2ac;font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.hero-phones strong{font-family:Arial,sans-serif;font-size:23px;letter-spacing:.08em;color:#fff}
+.hero-note{margin-top:42px;color:#c5b9b1;font-family:Arial,sans-serif}
+section{background:#050505}
+.section-head h2,.about-copy h2,.contact h2,.feature-copy h2{font-family:Georgia,'Times New Roman',serif;font-weight:500;letter-spacing:.01em}
+.about-copy p,.section-head p,.feature-copy p,.contact-item p{font-family:Arial,sans-serif}
+.menu-section,.contact{background:#0d0d0d}
+.menu-category{background:#111;border-color:#35302d}
+.menu-category h3{font-family:Georgia,'Times New Roman',serif;font-weight:500}
+.dish{font-family:Arial,sans-serif;border-color:#ffffff18}
+.dish b{color:#d6c4b9}
+.feature{background:#151312}
+.feature-copy .kicker{color:#c7b5aa}
+.feature-copy h2{color:#f6f0ec}
+.feature-copy p{color:#c7bfba}
+.feature-photo{filter:grayscale(35%)}
+.contact-item small{color:#c7b5aa}
+.contact-item a{font-family:Arial,sans-serif}
+.map{background:#111;border-color:#37312d}
+.map:before{background:linear-gradient(135deg,#ffffff0b,transparent 55%),repeating-linear-gradient(45deg,transparent,transparent 35px,#ffffff08 36px,#ffffff08 37px)}
+.map a{color:#d3c1b6;border-color:#d3c1b6}
+footer{background:#050505;color:#847b75}
+
+.footer-logo span{color:#d1beb3!important}
+@media(max-width:800px){.nav{height:88px}.logo-main{font-size:32px}.hero{min-height:720px}.nav-cta{font-size:10px;padding:11px 13px}}
+@media(max-width:520px){.nav{height:82px}.logo-main{font-size:28px}.logo-sub{font-size:9px}.hero{min-height:680px}.hero-phones{gap:22px}.hero-phones strong{font-size:20px}.nav-cta{padding:10px;font-size:9px}}
+
+
+/* Refined responsive menu presentation */
+:root{--bg:#050505;--panel:#101010;--cream:#f3eee9;--muted:#aaa19b;--line:#302b28;--gold:#cbb7aa;--red:#c9b5a8}
+body{background:var(--bg);color:var(--cream);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.wrap{width:min(1180px,calc(100% - 48px))}
+header{background:linear-gradient(180deg,rgba(0,0,0,.94),rgba(0,0,0,.12));backdrop-filter:blur(5px)}
+.nav{height:94px}
+.logo-main{font-size:clamp(30px,4vw,43px);letter-spacing:.075em}
+.hero{min-height:min(850px,100svh);background-position:center 52%;}
+.hero-inner{max-width:760px;padding-top:128px}
+.hero h1{font-size:clamp(76px,12vw,148px);letter-spacing:.015em;line-height:.82}
+.hero p{max-width:550px;font-size:17px;line-height:1.75;color:#ddd5cf}
+.hero-phones{gap:42px}
+.hero-phones a{padding-left:18px;border-color:#b8a59a}
+.hero-phones strong{font-size:25px;letter-spacing:.12em}
+section{padding:clamp(76px,9vw,116px) 0}
+.section-head{margin-bottom:48px}
+.section-head h2,.about-copy h2,.contact h2{letter-spacing:0}
+.about-grid{gap:clamp(32px,6vw,78px)}
+.about-art{min-height:520px;filter:grayscale(18%)}
+.menu-section{background:#090909}
+.real-menu{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch}
+.menu-category{grid-template-columns:minmax(150px, .72fr) minmax(0,1.28fr);min-height:0;background:linear-gradient(145deg,#151312,#0d0d0d);border:1px solid #38312d;transition:border-color .25s,transform .25s;}
+.menu-category:hover{border-color:#8d786b;transform:translateY(-3px)}
+
+.menu-category-body{padding:26px 24px 24px;min-width:0}
+.menu-category .num{font:600 10px/1.4 Arial, sans-serif;letter-spacing:.2em;color:#bca99f}
+.menu-category h3{font-size:clamp(23px,2.3vw,30px);line-height:1.08;margin:10px 0 20px;color:#f4eee9}
+.dish{gap:14px;padding:11px 0;border-top:1px solid rgba(255,255,255,.09);font:13px/1.45 Arial, sans-serif;align-items:flex-start}
+.dish span{color:#d9d1cb;overflow-wrap:anywhere}
+.dish b{font:600 13px/1.4 Arial,sans-serif;color:#d7c5ba;flex:0 0 auto}
+.menu-foot{justify-content:flex-start;margin-top:32px;padding-top:22px;border-top:1px solid #282321}
+.menu-foot a{font:600 11px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.feature{background:#171412;border:1px solid #302925}
+.feature-copy{padding:clamp(34px,6vw,76px)}
+.feature-photo{filter:grayscale(22%) contrast(1.08)}
+.contact{background:#0b0b0b}
+.contact-item a:hover,.contact-item strong{color:#f4eee9}
+.map{background:#111;border-color:#38312d}
+footer{border-top:1px solid #211d1a}
+@media(max-width:900px){.real-menu{grid-template-columns:1fr}.menu-category{grid-template-columns:minmax(175px,.75fr) minmax(0,1.25fr)}.menu-category-body{padding:26px}.menu-category h3{font-size:28px}}
+@media(max-width:600px){.wrap{width:calc(100% - 32px)}.nav{height:82px}.hero{min-height:760px;background-position:58% center}.hero-inner{padding-top:112px}.hero h1{font-size:clamp(72px,18vw,112px)}.hero p{font-size:15px}.hero-phones{gap:22px}.hero-phones strong{font-size:21px}.about-art{min-height:330px}.real-menu{gap:17px}.menu-category{grid-template-columns:1fr}.menu-category-body{padding:22px 21px 20px}.menu-category h3{font-size:27px;margin-bottom:16px}.dish{font-size:13px;padding:10px 0}.menu-foot{margin-top:24px}.feature{width:100%}.feature-copy{padding:42px 25px}.feature-photo{min-height:260px}.contact-grid{gap:24px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+
+/* Use the restaurant's supplied original logo artwork */
+
+
+
+
+
+@media(max-width:800px){}
+
+/* Clean menu layout — no pig illustration or logo artwork */
+a.logo.wordmark{width:auto;height:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-decoration:none}
+.logo-the{font-family:Georgia,'Times New Roman',serif;font-size:10px;letter-spacing:.45em;color:#d7c9c1}
+.logo-main{font-family:Georgia,'Times New Roman',serif;font-size:34px;line-height:1;color:#f6f0eb;letter-spacing:.04em;font-weight:700}
+.logo-sub{font-family:Georgia,'Times New Roman',serif;font-size:9px;letter-spacing:.38em;color:#d7c9c1}
+.menu-category{display:block;min-height:0}
+.menu-category-body{padding:26px 28px}
+.menu-category h3{margin-top:8px}
+.footer-logo.wordmark-footer{display:block;width:auto;height:auto;font-family:Georgia,'Times New Roman',serif;font-size:20px;letter-spacing:.12em;color:#f4efeb}
+@media(max-width:800px){a.logo.wordmark{width:auto;height:auto}.logo-main{font-size:29px}}
+@media(max-width:520px){.menu-category-body{padding:22px 20px}.logo-main{font-size:25px}.logo-sub{font-size:8px}}
+
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="logo wordmark" href="#" aria-label="BIG PIG — мясной ресторан"><span class="logo-the">- The -</span><span class="logo-main">BIG PIG</span><span class="logo-sub">мясной ресторан</span></a>
+<nav class="navlinks"><a href="#about">О нас</a><a href="#menu">Кухня</a><a href="#contacts">Контакты</a></nav>
+<a class="nav-cta" href="#contacts">КОНТАКТЫ</a>
+</div></header>
+<main>
+<section class="hero">
+<div class="wrap"><div class="hero-inner">
+<div class="eyebrow">Мясной ресторан • Пенза</div>
+<h1>BIG<br><span>PIG.</span></h1>
+<p>Место, где огонь встречается с настоящим вкусом. Стейки, гриль и блюда, ради которых хочется собраться вместе.</p>
+<div class="hero-phones">
+  <a href="tel:+78412300036"><span>Бронь столов</span><strong>30-00-36</strong></a>
+  <a href="tel:+78412303805"><span>Доставка</span><strong>303-805</strong></a>
+</div>
+<div class="hero-note">Московская, 85А · Пенза</div>
+</div></div>
+</section>
+<section id="about"><div class="wrap about-grid">
+<div class="about-art" role="img" aria-label="Мясо на гриле"></div>
+<div class="about-copy"><div class="kicker">Добро пожаловать в BIG PIG</div><h2>Характер.<br>Огонь. Вкус.</h2>
+<p>BIG PIG — мясной ресторан в центре Пензы. Здесь любят выразительный вкус, щедрые блюда и встречи, которые не хочется заканчивать. Приходите на обед, ужин или большой вечер с друзьями.</p>
+<p>В меню — мясо и гриль, стейки, бургеры, супы, салаты и блюда для тех, кто любит открывать новое.</p>
+<div class="facts"><div class="fact"><b>GRILL</b><small>Кухня на огне</small></div><div class="fact"><b>ЦЕНТР</b><small>Пензы</small></div><div class="fact"><b>ВКУС</b><small>С характером</small></div></div>
+</div></div></section>
+<section class="menu-section" id="menu"><div class="wrap">
+<div class="section-head"><div><div class="kicker">Что будем пробовать?</div><h2>В центре вкуса</h2></div><p>Выберите настроение вечера — а команда BIG PIG поможет подобрать блюда и напитки.</p></div>
+<div class="real-menu">
+<article class="menu-category">
+  <div class="menu-category-body"><div class="num">01 / TARTARES & BRUSCHETTAS</div><h3>Тартары и брускетты</h3>
+  <div class="dish"><span>Тартар из говядины</span><b>890 ₽</b></div>
+  <div class="dish"><span>Тартар из лосося</span><b>920 ₽</b></div>
+  <div class="dish"><span>Брускетта с крабом и креветкой</span><b>830 ₽</b></div>
+  <div class="dish"><span>С риетом из лосося</span><b>720 ₽</b></div>
+  <div class="dish"><span>С паштетом из утки</span><b>420 ₽</b></div>
+  <div class="dish"><span>С ростбифом</span><b>490 ₽</b></div>
+  <div class="dish"><span>Шведский тост с лососем</span><b>780 ₽</b></div>
+  </div>
+</article>
+<article class="menu-category">
+  <div class="menu-category-body"><div class="num">02 / SALADS</div><h3>Салаты</h3>
+  <div class="dish"><span>Капрезе со сладкими томатами</span><b>850 ₽</b></div>
+  <div class="dish"><span>Греческий салат</span><b>720 ₽</b></div>
+  <div class="dish"><span>Салат с тамбовским окороком</span><b>680 ₽</b></div>
+  <div class="dish"><span>Тёплый салат с жареным цыплёнком и томатами</span><b>750 ₽</b></div>
+  <div class="dish"><span>Тёплый салат с говядиной</span><b>920 ₽</b></div>
+  <div class="dish"><span>Руккола с морепродуктами</span><b>950 ₽</b></div>
+  <div class="dish"><span>Салат с тунцом и артишоками</span><b>1 400 ₽</b></div>
+  </div>
+</article>
+<article class="menu-category">
+  <div class="menu-category-body"><div class="num">03 / SOUPS</div><h3>Супы</h3>
+  <div class="dish"><span>Окрошка с квасом или мацони</span><b>680 ₽</b></div>
+  <div class="dish"><span>Борщ с салом и сметаной</span><b>680 ₽</b></div>
+  <div class="dish"><span>Куриный бульон</span><b>500 ₽</b></div>
+  <div class="dish"><span>Том ям с морепродуктами</span><b>1 150 ₽</b></div>
+  <div class="dish"><span>Уха по-фински</span><b>820 ₽</b></div>
+  </div>
+</article>
+<article class="menu-category">
+  <div class="menu-category-body"><div class="num">04 / HOT SPECIALTIES</div><h3>Горячие специалитеты</h3>
+  <div class="dish"><span>Свиные уши Мачете</span><b>750 ₽</b></div>
+  <div class="dish"><span>Мозговая кость</span><b>600 ₽</b></div>
+  <div class="dish"><span>Хрустящий сулугуни</span><b>620 ₽</b></div>
+  <div class="dish"><span>Куриные крылья в глазури</span><b>710 ₽</b></div>
+  </div>
+</article>
+<article class="menu-category">
+  <div class="menu-category-body"><div class="num">05 / STARTERS</div><h3>Закуски</h3>
+  <div class="dish"><span>Перчики греко с анчоусами</span><b>650 ₽</b></div>
+  <div class="dish"><span>Антипасти</span><b>1 160 ₽</b></div>
+  <div class="dish"><span>Сырное плато</span><b>1 980 ₽</b></div>
+  <div class="dish"><span>Колбаски краковской колбасы с горчицей и пивным хлебом</span><b>1 550 ₽</b></div>
+  <div class="dish"><span>Маринованное яйцо</span><b>140 ₽</b></div>
+  </div>
+</article>
+<article class="menu-category">
+  <div class="menu-category-body"><div class="num">06 / GRILL</div><h3>Мясо на гриле</h3>
+  <div class="dish"><span>Стейк Рибай Signature</span><b>4 650 ₽</b></div>
+  <div class="dish"><span>Стейк Миньон Signature</span><b>4 650 ₽</b></div>
+  <div class="dish"><span>Стейк Нью-Йорк Signature</span><b>3 100 ₽</b></div>
+  <div class="dish"><span>Мраморные рёбра Асадо</span><b>2 750 ₽</b></div>
+  <div class="dish"><span>Скёрт стейк диафрагма</span><b>1 550 ₽</b></div>
+  <div class="dish"><span>Стейк Миньон, вырезка</span><b>1 900 ₽</b></div>
+  <div class="dish"><span>Шашлык из говядины</span><b>1 350 ₽</b></div>
+  <div class="dish"><span>Свиная шейка гриль</span><b>1 100 ₽</b></div>
+  <div class="dish"><span>Тосканский стейк</span><b>1 150 ₽</b></div>
+  <div class="dish"><span>Свиные рёбра по-техасски</span><b>1 550 ₽</b></div>
+  <div class="dish"><span>Бэби-бэк рибс</span><b>1 200 ₽</b></div>
+  <div class="dish"><span>Бифштекс из баранины</span><b>950 ₽</b></div>
+  <div class="dish"><span>Ножка ягнёнка</span><b>1 780 ₽</b></div>
+  <div class="dish"><span>Рёбра ягнёнка</span><b>1 850 ₽</b></div>
+  </div>
+</article>
+<article class="menu-category">
+  <div class="menu-category-body"><div class="num">07 / BURGERS</div><h3>Бургеры</h3>
+  <div class="dish"><span>Классический чизбургер</span><b>880 ₽</b></div>
+  <div class="dish"><span>Бургер с рваной говядиной</span><b>1 050 ₽</b></div>
+  <div class="dish"><span>Тундра</span><b>920 ₽</b></div>
+  <div class="dish"><span>Челентано</span><b>1 100 ₽</b></div>
+  </div>
+</article>
+<article class="menu-category">
+  <div class="menu-category-body"><div class="num">08 / TO SHARE</div><h3>На компанию</h3>
+  <div class="dish"><span>Рёбра Асадо</span><b>3 100 ₽</b></div>
+  <div class="dish"><span>Томлёная баранья голяшка с томатным соусом и гарнирами</span><b>3 300 ₽</b></div>
+  <div class="dish"><span>Большой гриль для больших друзей</span><b>7 450 ₽</b></div>
+  </div>
+</article>
+<article class="menu-category">
+  <div class="menu-category-body"><div class="num">09 / SAUSAGES</div><h3>Колбаски</h3>
+  <div class="dish"><span>Говяжьи колбаски</span><b>920 ₽</b></div>
+  <div class="dish"><span>Охотничьи колбаски</span><b>820 ₽</b></div>
+  <div class="dish"><span>Куриные колбаски с вялеными томатами</span><b>790 ₽</b></div>
+  </div>
+</article>
+</div>
+<div class="menu-foot"><a href="https://chibbis.ru/penza/restaurant/big-pig/menu" target="_blank" rel="noopener">Смотреть меню и заказать онлайн →</a></div>
+
+</div></section>
+<section style="padding:0"><div class="wrap feature">
+<div class="feature-copy"><div class="kicker">Ваш вечер начинается здесь</div><h2>Собирайте<br>своих.</h2><p>Для долгих разговоров, важных поводов и простого желания вкусно поесть. Забронируйте стол — будем ждать.</p><div><a class="btn outline" href="tel:+78412300036">Столик по телефону</a></div></div>
+<div class="feature-photo" role="img" aria-label="Блюда на гриле"></div>
+</div></section>
+<section class="contact" id="contacts"><div class="wrap contact-grid">
+<div><div class="kicker">Ждём вас</div><h2>Найдёмся<br>за столом.</h2>
+<div class="contact-item"><small>Адрес</small><strong>Пенза, ул. Московская, 85А</strong><p>Исторический центр города</p></div>
+<div class="contact-item"><small>Бронь столов</small><a href="tel:+78412300036">30-00-36</a></div>
+<div class="contact-item"><small>Доставка</small><a href="tel:+78412303805">303-805</a><p>Позвоните, чтобы оформить заказ</p></div>
+<div class="contact-item"><small>Социальные сети</small><a href="https://vk.ru/bigpig_penza" target="_blank" rel="noopener">ВКонтакте →</a><br><a href="https://t.me/BigPig_Penza58" target="_blank" rel="noopener">Telegram →</a></div>
+</div>
+<div class="map"><div class="map-content"><h3>BIG PIG</h3><p>Московская, 85А<br>Пенза, Россия</p><a href="https://yandex.ru/maps/?text=Пенза%20Московская%2085А" target="_blank" rel="noopener">Открыть маршрут на карте →</a></div></div>
+</div></section>
+</main>
+<footer><div class="wrap footer-row"><div class="footer-logo wordmark-footer">THE BIG PIG</div><div>Мясной ресторан · Пенза</div><div>© BIG PIG</div></div></footer>
+</body></html>
